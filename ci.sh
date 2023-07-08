@@ -36,3 +36,5 @@ if test "${TEST_EXTENSION_MSAN}" != ""; then
     exit 1
   fi
 fi
+
+exec /bin/bash
