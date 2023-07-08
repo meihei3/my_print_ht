@@ -1,5 +1,15 @@
 #!/bin/sh -ex
 
+if test "${RUN_LOCAL}" != ""; then
+  cd "/ext"
+  phpize
+  ./configure --with-php-config=$(which php-config)
+  make clean
+  make -j$(nproc)
+  TEST_PHP_ARGS="--show-diff -q" make test
+  exec /bin/bash
+fi
+
 if test "${TEST_EXTENSION}" != ""; then
   cd "/ext"
   phpize
@@ -36,5 +46,3 @@ if test "${TEST_EXTENSION_MSAN}" != ""; then
     exit 1
   fi
 fi
-
-exec /bin/bash
