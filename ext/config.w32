@@ -1,7 +1,7 @@
-ARG_ENABLE('skeleton', 'skeleton support', 'no');
+ARG_ENABLE('my_print_ht', 'my_print_ht support', 'no');
 
-if (PHP_SKELETON != 'no') {
-	AC_DEFINE('HAVE_SKELETON', 1, 'skeleton support enabled');
+if (PHP_MY_PRINT_HT != 'no') {
+	AC_DEFINE('HAVE_MY_PRINT_HT', 1, 'my_print_ht support enabled');
 
-	EXTENSION('skeleton', 'skeleton.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+	EXTENSION('my_print_ht', 'my_print_ht.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
 }

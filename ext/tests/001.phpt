@@ -1,10 +1,10 @@
 --TEST--
-Check if skeleton is loaded
+Check if my_print_ht is loaded
 --EXTENSIONS--
-skeleton
+my_print_ht
 --FILE--
 <?php
-echo 'The extension "skeleton" is available';
+echo 'The extension "my_print_ht" is available';
 ?>
 --EXPECT--
-The extension "skeleton" is available
+The extension "my_print_ht" is available

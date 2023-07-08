@@ -1,7 +1,7 @@
 --TEST--
 test2() Basic test
 --EXTENSIONS--
-skeleton
+my_print_ht
 --FILE--
 <?php
 var_dump(test2());

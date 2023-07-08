@@ -1,7 +1,7 @@
 --TEST--
 test1() Basic test
 --EXTENSIONS--
-skeleton
+my_print_ht
 --FILE--
 <?php
 $ret = test1();
@@ -9,5 +9,5 @@ $ret = test1();
 var_dump($ret);
 ?>
 --EXPECT--
-The extension skeleton is loaded and working!
+The extension my_print_ht is loaded and working!
 NULL

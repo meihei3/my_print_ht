@@ -1,4 +1,4 @@
-/* skeleton extension for PHP */
+/* my_print_ht extension for PHP */
 
 #ifdef HAVE_CONFIG_H
 # include "config.h"
@@ -6,8 +6,8 @@
 
 #include "php.h"
 #include "ext/standard/info.h"
-#include "php_skeleton.h"
-#include "skeleton_arginfo.h"
+#include "php_my_print_ht.h"
+#include "my_print_ht_arginfo.h"
 
 /* For compatibility with older PHP versions */
 #ifndef ZEND_PARSE_PARAMETERS_NONE
@@ -21,7 +21,7 @@ PHP_FUNCTION(test1)
 {
 	ZEND_PARSE_PARAMETERS_NONE();
 
-	php_printf("The extension %s is loaded and working!\r\n", "skeleton");
+	php_printf("The extension %s is loaded and working!\r\n", "my_print_ht");
 }
 /* }}} */
 
@@ -44,9 +44,9 @@ PHP_FUNCTION(test2)
 /* }}}*/
 
 /* {{{ PHP_RINIT_FUNCTION */
-PHP_RINIT_FUNCTION(skeleton)
+PHP_RINIT_FUNCTION(my_print_ht)
 {
-#if defined(ZTS) && defined(COMPILE_DL_SKELETON)
+#if defined(ZTS) && defined(COMPILE_DL_MY_PRINT_HT)
 	ZEND_TSRMLS_CACHE_UPDATE();
 #endif
 
@@ -55,32 +55,32 @@ PHP_RINIT_FUNCTION(skeleton)
 /* }}} */
 
 /* {{{ PHP_MINFO_FUNCTION */
-PHP_MINFO_FUNCTION(skeleton)
+PHP_MINFO_FUNCTION(my_print_ht)
 {
 	php_info_print_table_start();
-	php_info_print_table_header(2, "skeleton support", "enabled");
+	php_info_print_table_header(2, "my_print_ht support", "enabled");
 	php_info_print_table_end();
 }
 /* }}} */
 
-/* {{{ skeleton_module_entry */
-zend_module_entry skeleton_module_entry = {
+/* {{{ my_print_ht_module_entry */
+zend_module_entry my_print_ht_module_entry = {
 	STANDARD_MODULE_HEADER,
-	"skeleton",					/* Extension name */
+	"my_print_ht",					/* Extension name */
 	ext_functions,					/* zend_function_entry */
 	NULL,							/* PHP_MINIT - Module initialization */
 	NULL,							/* PHP_MSHUTDOWN - Module shutdown */
-	PHP_RINIT(skeleton),			/* PHP_RINIT - Request initialization */
+	PHP_RINIT(my_print_ht),			/* PHP_RINIT - Request initialization */
 	NULL,							/* PHP_RSHUTDOWN - Request shutdown */
-	PHP_MINFO(skeleton),			/* PHP_MINFO - Module info */
-	PHP_SKELETON_VERSION,		/* Version */
+	PHP_MINFO(my_print_ht),			/* PHP_MINFO - Module info */
+	PHP_MY_PRINT_HT_VERSION,		/* Version */
 	STANDARD_MODULE_PROPERTIES
 };
 /* }}} */
 
-#ifdef COMPILE_DL_SKELETON
+#ifdef COMPILE_DL_MY_PRINT_HT
 # ifdef ZTS
 ZEND_TSRMLS_CACHE_DEFINE()
 # endif
-ZEND_GET_MODULE(skeleton)
+ZEND_GET_MODULE(my_print_ht)
 #endif
