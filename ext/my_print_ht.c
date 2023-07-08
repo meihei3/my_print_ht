@@ -43,6 +43,24 @@ PHP_FUNCTION(test2)
 }
 /* }}}*/
 
+/* {{{ void array_info( [ array $a ] ) */
+PHP_FUNCTION(array_info)
+{
+	zval *arr;
+	// $a という引数を取り、配列であることを期待する
+	ZEND_PARSE_PARAMETERS_START(1, 1)
+		Z_PARAM_ARRAY(arr)
+	ZEND_PARSE_PARAMETERS_END();
+
+	php_printf("ht->nTableMask: %#x\r\n", Z_ARRVAL_P(arr)->nTableMask);
+	php_printf("ht->nNumUsed: %d\r\n", Z_ARRVAL_P(arr)->nNumUsed);
+	php_printf("ht->nTableSize: %d\r\n", Z_ARRVAL_P(arr)->nTableSize);
+	php_printf("ht->nNumOfElements: %d\r\n", Z_ARRVAL_P(arr)->nNumOfElements);
+	php_printf("ht->nNextFreeElement: %d\r\n", Z_ARRVAL_P(arr)->nNextFreeElement);
+	php_printf("ht->nInternalPointer: %d\r\n", Z_ARRVAL_P(arr)->nInternalPointer);
+}
+/* }}}*/
+
 /* {{{ PHP_RINIT_FUNCTION */
 PHP_RINIT_FUNCTION(my_print_ht)
 {
